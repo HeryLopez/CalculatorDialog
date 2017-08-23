@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparentColor">#00000000</color>
+    <color name="pressedColor">#37000000</color>
+
+    <color name="valueOperationColor">#838383</color>
+    <color name="valueTotalColor">#caaeaeae</color>
+
+    <!-- Default colors -->
+    <color name="numberColor">#ffffff</color>
+    <color name="numberBackgroundColor">#00695C</color>
+    <color name="operatorColor">#ffffff</color>
+    <color name="operatorBackgroundColor">#4DB6AC</color>
+    <color name="dialogButtons">#4DB6AC</color>
+
+</resources>

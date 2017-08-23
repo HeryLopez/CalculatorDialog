@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Example Calculator Dialog</string>
+
+    <string name="button_label">Button</string>
+
+    <string name="example_1">Example 1</string>
+    <string name="example_1_text">&lt;TextView &#8230; android:text=\"5.25\" /&gt;\n\ncalculatorDialog = new CalculatorDialog();\ncalculatorDialog.setSeparator(\".\");\ncalculatorDialog.setDecor(\"£\");\n\ndouble v1 = &lt;Double value for initialize the dialog&gt;;\ncalculatorDialog.showDialog(\n&#160;&#160;&#160;&#160;getSupportFragmentManager(), \"dialog\", v1\n);</string>
+
+    <string name="example_2">Example 2</string>
+    <string name="example_2_text">&lt;TextView &#8230; android:text=\"\" /&gt;\n\ncalculatorDialog = new CalculatorDialog();\ncalculatorDialog.setSeparator(\";\");\ncalculatorDialog.setDecor(\"$\");\n\ndouble v1 = &lt;Double value for initialize the dialog&gt;;\ncalculatorDialog.showDialog(\n&#160;&#160;&#160;&#160;getSupportFragmentManager(), \"dialog\", v1\n);</string>
+</resources>
+
+
+
+
+

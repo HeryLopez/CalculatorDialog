@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadeScrollbars="false"
+    tools:context="com.app.herysapps.calculatordialog.ExampleActivity">
+
+    <RelativeLayout
+        android:id="@+id/activity_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <RelativeLayout
+            android:id="@+id/layoutExample01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:id="@+id/textViewTitre1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="@string/example_1"
+                android:textColor="#de000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textViewDesc1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewTitre1"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="6dp"
+                android:text="@string/example_1_text"
+                android:textColor="#8a000000"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/buttonSelector01"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textViewDesc1"
+                android:text="@string/button_label" />
+
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignTop="@+id/buttonSelector01"
+                android:layout_toEndOf="@+id/buttonSelector01"
+                android:layout_toRightOf="@+id/buttonSelector01"
+                android:gravity="center"
+                android:text="5.25"
+                android:textColor="#de000000"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/layoutExample01"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="4dp"
+            android:background="#000000" />
+
+        <RelativeLayout
+            android:id="@+id/layoutExample02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutLine"
+            android:layout_margin="8dp">
+
+
+            <TextView
+                android:id="@+id/textViewTitre2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="@string/example_2"
+                android:textColor="#de000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textViewDesc2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewTitre2"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="6dp"
+                android:text="@string/example_2_text"
+                android:textColor="#8a000000"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/buttonSelector02"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textViewDesc2"
+                android:text="@string/button_label" />
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignTop="@+id/buttonSelector02"
+                android:layout_toEndOf="@+id/buttonSelector02"
+                android:layout_toRightOf="@+id/buttonSelector02"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#de000000"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>
+
