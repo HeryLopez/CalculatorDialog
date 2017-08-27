@@ -57,7 +57,6 @@
                 android:layout_toEndOf="@+id/buttonSelector01"
                 android:layout_toRightOf="@+id/buttonSelector01"
                 android:gravity="center"
-                android:text="5.25"
                 android:textColor="#de000000"
                 android:textSize="14sp" />
 

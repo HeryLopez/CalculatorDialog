@@ -4,8 +4,8 @@
     <string name="negative_button">Cancel</string>
     <string name="positive_button">OK</string>
 
-    <string name="division">/</string>
-    <string name="multiplication">*</string>
+    <string name="division">÷</string>
+    <string name="multiplication">×</string>
     <string name="subtraction">-</string>
     <string name="sum">+</string>
 

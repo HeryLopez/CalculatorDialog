@@ -1,13 +1,20 @@
 <resources>
-    <string name="app_name">Example Calculator Dialog</string>
+    <string name="app_name">Calculator Dialog</string>
+
+    <string name="div_0_error">Division par 0 impossible</string>
+    <string name="limit_number_error">Limite de nombre dépassée</string>
+    <string name="limit_negative_number">Numéros négatifs désactivés</string>
+
 
     <string name="button_label">Button</string>
 
     <string name="example_1">Example 1</string>
-    <string name="example_1_text">&lt;TextView &#8230; android:text=\"5.25\" /&gt;\n\ncalculatorDialog = new CalculatorDialog();\ncalculatorDialog.setSeparator(\".\");\ncalculatorDialog.setDecor(\"£\");\n\ndouble v1 = &lt;Double value for initialize the dialog&gt;;\ncalculatorDialog.showDialog(\n&#160;&#160;&#160;&#160;getSupportFragmentManager(), \"dialog\", v1\n);</string>
+    <string name="example_1_text">CalculatorDialog calculatorDialog = new CalculatorDialog();\ncalculatorDialog.setName(DIALOG_01);\ncalculatorDialog01.setLimitNumbers(20);\ncalculatorDialog01.setErrorDiv0(getString(R.string.div_0_error));\ncalculatorDialog01.setErrorLimit(getString(R.string.limit_number_error));\n\ndouble v1 = 3.1415;\ncalculatorDialog.showDialog(\n&#160;&#160;&#160;&#160;getSupportFragmentManager(), \"dialog\", v1\n);</string>
+
+
 
     <string name="example_2">Example 2</string>
-    <string name="example_2_text">&lt;TextView &#8230; android:text=\"\" /&gt;\n\ncalculatorDialog = new CalculatorDialog();\ncalculatorDialog.setSeparator(\";\");\ncalculatorDialog.setDecor(\"$\");\n\ndouble v1 = &lt;Double value for initialize the dialog&gt;;\ncalculatorDialog.showDialog(\n&#160;&#160;&#160;&#160;getSupportFragmentManager(), \"dialog\", v1\n);</string>
+    <string name="example_2_text">CalculatorDialog calculatorDialog = new CalculatorDialog();\ncalculatorDialog.setName(DIALOG_02);\ncalculatorDialog.setDecor(\"$\");\ncalculatorDialog.setNumberColor(R.color.color01);\ncalculatorDialog.setOperationColor(R.color.color01);\ncalculatorDialog.setNumberBackgroundColor(R.color.color02);\ncalculatorDialog.setOperatorBackgroundColor(R.color.color02);\ncalculatorDialog.setDialogButtonsColor(R.color.color01);\n\ndouble v1 = 0;\ncalculatorDialog2.showDialog(\n&#160;&#160;&#160;&#160;getSupportFragmentManager(), \"dialog\", v1\n);</string>
 </resources>
 
 

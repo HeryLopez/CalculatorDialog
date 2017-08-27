@@ -7,9 +7,6 @@ import android.widget.TextView;
 
 import com.app.herysapps.calculatordialoglib.CalculatorDialog;
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-
 /**
  * Examples of use.
  * <p>
@@ -17,7 +14,7 @@ import java.text.DecimalFormatSymbols;
  * <p>
  * Github:
  * Author: https://github.com/HeryLopez
- * Project: https://github.com/HeryLopez/ColorSelector
+ * Project: https://github.com/HeryLopez/CalculatorDialog
  */
 public class ExampleActivity extends AppCompatActivity implements CalculatorDialog.ICalculatorDialogClick {
 
@@ -26,55 +23,46 @@ public class ExampleActivity extends AppCompatActivity implements CalculatorDial
     private String DIALOG_01 = "calculatorDialog01";
     private String DIALOG_02 = "calculatorDialog02";
 
+    private double v1, v2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
 
-        DecimalFormat format = (DecimalFormat) DecimalFormat.getInstance();
-        DecimalFormatSymbols symbols = format.getDecimalFormatSymbols();
-        char sep = symbols.getDecimalSeparator();
-
-
         calculatorDialog01 = new CalculatorDialog();
         calculatorDialog01.setName(DIALOG_01);
-        calculatorDialog01.setSeparator(String.valueOf(sep));
-        calculatorDialog01.setDecor("£");
+        calculatorDialog01.limitNumbers(20);
+        calculatorDialog01.negativeNumberActivated(true);
+        calculatorDialog01.setErrorDiv0(getString(R.string.div_0_error));
+        calculatorDialog01.setErrorLimit(getString(R.string.limit_number_error));
+        calculatorDialog01.setErrorNegativeValue(getString(R.string.limit_negative_number));
+
+        v1 = 1234567.89; //3.1415
+        String strWithFormat = calculatorDialog01.getNumberWithFormat(v1);
+        ((TextView)findViewById(R.id.textView1)).setText(strWithFormat);
+
 
         (findViewById(R.id.buttonSelector01)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = ((TextView)findViewById(R.id.textView1)).getText().toString();
-                double v1 = 0;
-
-                if(!s.equals(""))
-                    v1 = Double.parseDouble(s);
-
                 calculatorDialog01.showDialog(getSupportFragmentManager(), "dialog", v1);
             }
         });
 
         calculatorDialog02 = new CalculatorDialog();
         calculatorDialog02.setName(DIALOG_02);
-        calculatorDialog02.setSeparator(";");
         calculatorDialog02.setDecor("$");
-        calculatorDialog01.setNumberColor(R.color.color01);
-        calculatorDialog01.setOperationColor(R.color.color01);
-        calculatorDialog01.setNumberBackgroundColor(R.color.color02);
-        calculatorDialog01.setOperatorBackgroundColor(R.color.color02);
-        calculatorDialog01.setDialogButtonsColor(R.color.color01);
-
+        calculatorDialog02.setNumberColor(R.color.color01);
+        calculatorDialog02.setOperationColor(R.color.color01);
+        calculatorDialog02.setNumberBackgroundColor(R.color.color02);
+        calculatorDialog02.setOperatorBackgroundColor(R.color.color02);
+        calculatorDialog02.setDialogButtonsColor(R.color.color01);
 
         (findViewById(R.id.buttonSelector02)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = ((TextView)findViewById(R.id.textView2)).getText().toString();
-                double v1 = 0;
-
-                if(!s.equals(""))
-                    v1 = Double.parseDouble(s);
-
-                calculatorDialog02.showDialog(getSupportFragmentManager(), "dialog", v1);
+                calculatorDialog02.showDialog(getSupportFragmentManager(), "dialog", v2);
             }
         });
     }
@@ -85,14 +73,16 @@ public class ExampleActivity extends AppCompatActivity implements CalculatorDial
     }
 
     @Override
-    public void onCalculatorDialogResponse(String name, String value) {
+    public void onCalculatorDialogResponse(String name, double value, String valueStr) {
 
         if (name.equals(DIALOG_01)) {
-            ((TextView)findViewById(R.id.textView1)).setText(value);
+            ((TextView)findViewById(R.id.textView1)).setText(valueStr);
+            v1 = value;
         }
 
         if (name.equals(DIALOG_02)) {
-            ((TextView)findViewById(R.id.textView2)).setText(value);
+            ((TextView)findViewById(R.id.textView2)).setText(valueStr);
+            v2 = value;
         }
     }
 
