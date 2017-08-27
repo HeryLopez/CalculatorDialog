@@ -18,7 +18,7 @@ import com.app.herysapps.calculatordialoglib.CalculatorDialog;
  */
 public class ExampleActivity extends AppCompatActivity implements CalculatorDialog.ICalculatorDialogClick {
 
-    CalculatorDialog calculatorDialog01, calculatorDialog02;
+    CalculatorDialog cal01, cal02;
 
     private String DIALOG_01 = "calculatorDialog01";
     private String DIALOG_02 = "calculatorDialog02";
@@ -30,39 +30,39 @@ public class ExampleActivity extends AppCompatActivity implements CalculatorDial
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
 
-        calculatorDialog01 = new CalculatorDialog();
-        calculatorDialog01.setName(DIALOG_01);
-        calculatorDialog01.limitNumbers(20);
-        calculatorDialog01.negativeNumberActivated(true);
-        calculatorDialog01.setErrorDiv0(getString(R.string.div_0_error));
-        calculatorDialog01.setErrorLimit(getString(R.string.limit_number_error));
-        calculatorDialog01.setErrorNegativeValue(getString(R.string.limit_negative_number));
+        cal01 = new CalculatorDialog();
+        cal01.setName(DIALOG_01);
+        cal01.limitNumbers(20);
+        cal01.negativeNumberActivated(true);
+        cal01.setErrorDiv0(getString(R.string.div_0_error));
+        cal01.setErrorLimit(getString(R.string.limit_number_error));
+        cal01.setErrorNegativeValue(getString(R.string.limit_negative_number));
 
         v1 = 1234567.89; //3.1415
-        String strWithFormat = calculatorDialog01.getNumberWithFormat(v1);
+        String strWithFormat = cal01.getNumberWithFormat(v1);
         ((TextView)findViewById(R.id.textView1)).setText(strWithFormat);
 
 
         (findViewById(R.id.buttonSelector01)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculatorDialog01.showDialog(getSupportFragmentManager(), "dialog", v1);
+                cal01.showDialog(getSupportFragmentManager(), "dialog", v1);
             }
         });
 
-        calculatorDialog02 = new CalculatorDialog();
-        calculatorDialog02.setName(DIALOG_02);
-        calculatorDialog02.setDecor("$");
-        calculatorDialog02.setNumberColor(R.color.color01);
-        calculatorDialog02.setOperationColor(R.color.color01);
-        calculatorDialog02.setNumberBackgroundColor(R.color.color02);
-        calculatorDialog02.setOperatorBackgroundColor(R.color.color02);
-        calculatorDialog02.setDialogButtonsColor(R.color.color01);
+        cal02 = new CalculatorDialog();
+        cal02.setName(DIALOG_02);
+        cal02.setDecor("$");
+        cal02.setNumberColor(R.color.color01);
+        cal02.setOperationColor(R.color.color01);
+        cal02.setNumberBackgroundColor(R.color.color02);
+        cal02.setOperatorBackgroundColor(R.color.color02);
+        cal02.setDialogButtonsColor(R.color.color01);
 
         (findViewById(R.id.buttonSelector02)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculatorDialog02.showDialog(getSupportFragmentManager(), "dialog", v2);
+                cal02.showDialog(getSupportFragmentManager(), "dialog", v2);
             }
         });
     }
