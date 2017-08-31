@@ -1,1 +1,1 @@
-![Banner Color Selector](img/banner.png)
+![Banner Calculator Dialog](img/banner.png)
