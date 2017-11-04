@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CalculatorDialog.iml" filepath="$PROJECT_DIR$/CalculatorDialog.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CalculatorDialog.iml" filepath="$PROJECT_DIR$/CalculatorDialog.iml" />
       <module fileurl="file://$PROJECT_DIR$/CalculatorDialogLib/CalculatorDialogLib.iml" filepath="$PROJECT_DIR$/CalculatorDialogLib/CalculatorDialogLib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CalculatorDialogLib/CalculatorDialogLib.iml" filepath="$PROJECT_DIR$/CalculatorDialogLib/CalculatorDialogLib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Example/Example.iml" filepath="$PROJECT_DIR$/Example/Example.iml" />
       <module fileurl="file://$PROJECT_DIR$/Example/Example.iml" filepath="$PROJECT_DIR$/Example/Example.iml" />
     </modules>
   </component>
