@@ -6,9 +6,11 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.core.content.ContextCompat;
+
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -396,16 +398,16 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
 
 
         if (v.getId() == R.id.buttonDivision) {
-            addOperator(Character.Operation.DIVISION);
+            addOperator(Operation.DIVISION);
         }
         if (v.getId() == R.id.buttonMultiplication) {
-            addOperator(Character.Operation.MULTIPLICATION);
+            addOperator(Operation.MULTIPLICATION);
         }
         if (v.getId() == R.id.buttonSubtraction) {
-            addOperator(Character.Operation.SUBTRACTION);
+            addOperator(Operation.SUBTRACTION);
         }
         if (v.getId() == R.id.buttonSum) {
-            addOperator(Character.Operation.SUM);
+            addOperator(Operation.SUM);
         }
 
 
@@ -460,12 +462,12 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
     }
 
     // Operators
-    private void addOperator(Character.Operation operation) {
+    private void addOperator(Operation operation) {
 
         if (mStringList.size() > 0) {
             Character tmp = mStringList.get(mStringList.size() - 1);
-            if (tmp.getType() == Character.Type.NUMBER) {
-                mStringList.add(new Character(null, operation, Character.Type.OPERATOR));
+            if (tmp.getType() == Type.NUMBER) {
+                mStringList.add(new Character(null, operation, Type.OPERATOR));
             }
         }
     }
@@ -474,9 +476,9 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
     private void deleteNumber() {
         if (mStringList.size() > 0) {
             Character character = mStringList.get(mStringList.size() - 1);
-            Character.Type type = character.getType();
+            Type type = character.getType();
 
-            if (type == Character.Type.NUMBER) {
+            if (type == Type.NUMBER) {
 
                 String value = character.getValue();
 
@@ -488,7 +490,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
                 }
             }
 
-            if (type == Character.Type.OPERATOR) {
+            if (type == Type.OPERATOR) {
                 mStringList.remove(mStringList.size() - 1);
             }
         }
@@ -501,7 +503,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
             addNumber(s);
         } else {
             Character tmp = mStringList.get(mStringList.size() - 1);
-            if (tmp.getType() == Character.Type.NUMBER) {
+            if (tmp.getType() == Type.NUMBER) {
                 if (isPoint) {
                     boolean b = tmp.getValue().contains(s);
                     if (b) {
@@ -522,33 +524,33 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
     }
 
     private void addNumber(String s) {
-        mStringList.add(new Character(s, null, Character.Type.NUMBER));
+        mStringList.add(new Character(s, null, Type.NUMBER));
     }
 
 
     private String getOperation() {
         String result = "";
-        Character.Type type;
-        Character.Operation operation;
+        Type type;
+        Operation operation;
 
         for (int i = 0; i < mStringList.size(); i++) {
 
             type = mStringList.get(i).getType();
 
-            if (type == Character.Type.NUMBER) {
+            if (type == Type.NUMBER) {
                 result = result + getNumberWithSeparation(mStringList.get(i).getValue());
             }
 
-            if (type == Character.Type.OPERATOR) {
+            if (type == Type.OPERATOR) {
                 operation = mStringList.get(i).getOperation();
 
-                if (operation == Character.Operation.SUM) {
+                if (operation == Operation.SUM) {
                     result = result + " + ";
-                } else if (operation == Character.Operation.SUBTRACTION) {
+                } else if (operation == Operation.SUBTRACTION) {
                     result = result + " - ";
-                } else if (operation == Character.Operation.MULTIPLICATION) {
+                } else if (operation == Operation.MULTIPLICATION) {
                     result = result + " × ";
-                } else if (operation == Character.Operation.DIVISION) {
+                } else if (operation == Operation.DIVISION) {
                     result = result + " ÷ ";
                 }
             }
@@ -568,8 +570,8 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
             return result;
         }
 
-        Character.Type type01, type02;
-        Character.Operation operation;
+        Type type01, type02;
+        Operation operation;
         List<Character> mStringListAux = new ArrayList<>();
 
         int itemsCount;
@@ -592,13 +594,13 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
 
             type01 = mStringListAux.get(index).getType();
 
-            if (type01 == Character.Type.NUMBER) {
+            if (type01 == Type.NUMBER) {
                 type02 = mStringListAux.get(index + 1).getType();
 
-                if (type02 == Character.Type.OPERATOR) {
+                if (type02 == Type.OPERATOR) {
                     operation = mStringListAux.get(index + 1).getOperation();
 
-                    if (operation == Character.Operation.SUM) {
+                    if (operation == Operation.SUM) {
                         if (iteration == 1) {
                             index = index + 2;
                         }
@@ -613,7 +615,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
                             mStringListAux.remove(index + 2);
                             mStringListAux.remove(index + 1);
                         }
-                    } else if (operation == Character.Operation.SUBTRACTION) {
+                    } else if (operation == Operation.SUBTRACTION) {
                         if (iteration == 1) {
                             index = index + 2;
                         }
@@ -628,7 +630,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
                             mStringListAux.remove(index + 2);
                             mStringListAux.remove(index + 1);
                         }
-                    } else if (operation == Character.Operation.MULTIPLICATION) {
+                    } else if (operation == Operation.MULTIPLICATION) {
                         if (iteration == 1) {
                             number01 = Double.parseDouble(mStringListAux.get(index).getValue());
                             number02 = Double.parseDouble(mStringListAux.get(index + 2).getValue());
@@ -641,7 +643,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
                             mStringListAux.remove(index + 1);
                         }
 
-                    } else if (operation == Character.Operation.DIVISION) {
+                    } else if (operation == Operation.DIVISION) {
                         if (iteration == 1) {
                             number01 = Double.parseDouble(mStringListAux.get(index).getValue());
                             number02 = Double.parseDouble(mStringListAux.get(index + 2).getValue());
