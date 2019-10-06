@@ -151,7 +151,22 @@ class CalculatorDialogBuilder {
         }
 
         val dialog = CalculatorDialog()
-        dialog.setParameters(onDialogResultListener, name, decor, numberColor, operationColor, numberBackgroundColor, operatorBackgroundColor, dialogButtonsColor, limitNumbers, limitNegativeNumbers, errorDiv0, errorLimitNumber, errorNegativeValue)
+        dialog.mListener = onDialogResultListener!!
+        dialog.mName = name!!
+
+        if(decor != null) dialog.mDecor = decor
+        if(numberColor != null) dialog.mNumberColor = numberColor!!
+        if(operationColor != null) dialog.mOperationColor = operationColor!!
+        if(numberBackgroundColor != null) dialog.mNumberBackgroundColor = numberBackgroundColor!!
+        if(operatorBackgroundColor != null) dialog.mOperatorBackgroundColor = operatorBackgroundColor!!
+
+        if(dialogButtonsColor != null) dialog.mDialogButtonsColor = dialogButtonsColor!!
+        if(limitNumbers != null) dialog.mLimitNumbers = limitNumbers!!
+        if(limitNegativeNumbers != null) dialog.mLimitNegativeNumbers = limitNegativeNumbers!!
+        if(errorDiv0 != null) dialog.mErrorDiv0 = errorDiv0!!
+        if(errorLimitNumber != null) dialog.mErrorLimitNumber = errorLimitNumber!!
+        if(errorNegativeValue != null) dialog.mErrorNegativeValue = errorNegativeValue!!
+
         return dialog
     }
 }
