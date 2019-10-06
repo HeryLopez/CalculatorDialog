@@ -6,10 +6,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.core.content.ContextCompat;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -169,13 +168,13 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
      */
     public void limitNumbers(int limit) {
 
-        if(limit < 0){
+        if (limit < 0) {
             throw new RuntimeException("The limit must be greater than or equal to zero.");
         }
         this.mLimitNumbers = limit;
     }
 
-    public void negativeNumberActivated(boolean b){
+    public void negativeNumberActivated(boolean b) {
         mLimitNegativeNumbers = b;
     }
 
@@ -227,7 +226,6 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         outState.putString(VALUE, tmp);
     }
 
-    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Get information the instance if there is.
@@ -268,7 +266,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         return alertCurrency;
     }
 
-    private void InitializeInterface(){
+    private void InitializeInterface() {
         mTextViewOperation = (TextView) mView.findViewById(R.id.textViewValueOperation);
         mTextViewValue = (TextView) mView.findViewById(R.id.textViewValue);
 
@@ -312,35 +310,35 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         mView.findViewById(R.id.operators).setBackgroundResource(mOperatorBackgroundColor);
 
         int dialogButtonsColor = ContextCompat.getColor(getContext(), mDialogButtonsColor);
-        ((Button)mView.findViewById(R.id.buttonCancel)).setTextColor(dialogButtonsColor);
-        ((Button)mView.findViewById(R.id.buttonOk)).setTextColor(dialogButtonsColor);
+        ((Button) mView.findViewById(R.id.buttonCancel)).setTextColor(dialogButtonsColor);
+        ((Button) mView.findViewById(R.id.buttonOk)).setTextColor(dialogButtonsColor);
 
         int numberColor = ContextCompat.getColor(getContext(), mNumberColor);
-        ((Button)mView.findViewById(R.id.button09)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.button08)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.button07)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.button06)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.button05)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.button04)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.button03)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.button02)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.button01)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.button00)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.buttonEqual)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.buttonPoint)).setTextColor(numberColor);
-        ((Button)mView.findViewById(R.id.buttonPoint)).setText(mSeparator);
+        ((Button) mView.findViewById(R.id.button09)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.button08)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.button07)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.button06)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.button05)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.button04)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.button03)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.button02)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.button01)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.button00)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.buttonEqual)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.buttonPoint)).setTextColor(numberColor);
+        ((Button) mView.findViewById(R.id.buttonPoint)).setText(mSeparator);
 
 
         int operationColor = ContextCompat.getColor(getContext(), mOperationColor);
 
 
-        ((ImageButton)mView.findViewById(R.id.imageButtonDel)).setColorFilter(operationColor);
+        ((ImageButton) mView.findViewById(R.id.imageButtonDel)).setColorFilter(operationColor);
 
 
-        ((Button)mView.findViewById(R.id.buttonDivision)).setTextColor(operationColor);
-        ((Button)mView.findViewById(R.id.buttonMultiplication)).setTextColor(operationColor);
-        ((Button)mView.findViewById(R.id.buttonSubtraction)).setTextColor(operationColor);
-        ((Button)mView.findViewById(R.id.buttonSum)).setTextColor(operationColor);
+        ((Button) mView.findViewById(R.id.buttonDivision)).setTextColor(operationColor);
+        ((Button) mView.findViewById(R.id.buttonMultiplication)).setTextColor(operationColor);
+        ((Button) mView.findViewById(R.id.buttonSubtraction)).setTextColor(operationColor);
+        ((Button) mView.findViewById(R.id.buttonSum)).setTextColor(operationColor);
 
     }
 
@@ -348,12 +346,12 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
      * Show the dialog et set the initial value.
      *
      * @param fragmentManager see {@link DialogFragment#show(FragmentManager, String) DialogFragment.show}.
-     * @param tag see {@link DialogFragment#show(FragmentManager, String) DialogFragment.show}.
-     * @param value initial value
+     * @param tag             see {@link DialogFragment#show(FragmentManager, String) DialogFragment.show}.
+     * @param value           initial value
      */
     public void showDialog(FragmentManager fragmentManager, String tag, double value) {
 
-        if(mName.equals("")){
+        if (mName.equals("")) {
             throw new RuntimeException("CalculatorDialog instance must initialize the Name property.");
         }
 
@@ -376,14 +374,14 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
             return;
         }
 
-        if(!IsInfinity(tV) && !IsInvalidLimit(tV) && !IsNegativeNumber(tV)){
-            if(v.getId() == R.id.buttonOk){
+        if (!IsInfinity(tV) && !IsInvalidLimit(tV) && !IsNegativeNumber(tV)) {
+            if (v.getId() == R.id.buttonOk) {
                 mListener.onCalculatorDialogResponse(mName, getTotalInDouble(), getTotalToShow());
                 this.dismiss();
                 return;
             }
 
-            if(v.getId() == R.id.buttonEqual){
+            if (v.getId() == R.id.buttonEqual) {
                 String tmp = getTotalInString();
                 mStringList.clear();
                 setDoubleInList(tmp);
@@ -528,7 +526,6 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
     }
 
 
-
     private String getOperation() {
         String result = "";
         Character.Type type;
@@ -567,7 +564,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
 
         String result = "";
 
-        if(mStringList.isEmpty()){
+        if (mStringList.isEmpty()) {
             return result;
         }
 
@@ -576,13 +573,13 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         List<Character> mStringListAux = new ArrayList<>();
 
         int itemsCount;
-        if(mStringList.size() % 2 == 0){
+        if (mStringList.size() % 2 == 0) {
             itemsCount = mStringList.size() - 1;
         } else {
             itemsCount = mStringList.size();
         }
 
-        for(int i = 0; i < itemsCount; i++){
+        for (int i = 0; i < itemsCount; i++) {
             Character copy = new Character(mStringList.get(i).getValue(), mStringList.get(i).getOperation(), mStringList.get(i).getType());
             mStringListAux.add(copy);
         }
@@ -661,7 +658,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
                 }
             }
 
-            if (index >= mStringListAux.size()-1) {
+            if (index >= mStringListAux.size() - 1) {
                 iteration = 2;
                 index = 0;
             }
@@ -673,34 +670,34 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         return result;
     }
 
-    private String getTotalInString(){
+    private String getTotalInString() {
         String value = getTotal();
-        BigDecimal bd = new BigDecimal(!value.equals("")? value : "0");
+        BigDecimal bd = new BigDecimal(!value.equals("") ? value : "0");
         return bd.toPlainString();
     }
 
-    private double getTotalInDouble(){
+    private double getTotalInDouble() {
         String total = getTotal();
         double result = 0;
-        if(!total.equals("")) {
+        if (!total.equals("")) {
             result = Double.parseDouble(total);
         }
         return result;
     }
 
-    private String getTotalToShow(){
+    private String getTotalToShow() {
 
         String result;
         String total = getTotal();
 
-        if(IsInfinity(total)){
+        if (IsInfinity(total)) {
             result = mErrorDiv0;
-        }else if (IsInvalidLimit(total)){
+        } else if (IsInvalidLimit(total)) {
             result = mErrorLimitNumber;
-        }else if (IsNegativeNumber(total)){
+        } else if (IsNegativeNumber(total)) {
             result = mErrorNegativeValue;
-        }else{
-            BigDecimal bd = new BigDecimal(!total.equals("")? total : "0");
+        } else {
+            BigDecimal bd = new BigDecimal(!total.equals("") ? total : "0");
             total = bd.toPlainString();
 
             result = getNumberWithSeparation(total);
@@ -709,50 +706,50 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         return result.replace(".", mSeparator);
     }
 
-    private boolean IsInfinity(String total){
+    private boolean IsInfinity(String total) {
 
-        if(total.equals(""))
+        if (total.equals(""))
             return false;
 
-        if(Double.parseDouble(total) == Double.POSITIVE_INFINITY || Double.parseDouble(total) == Double.POSITIVE_INFINITY){
+        if (Double.parseDouble(total) == Double.POSITIVE_INFINITY || Double.parseDouble(total) == Double.POSITIVE_INFINITY) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    private boolean IsInvalidLimit(String total){
+    private boolean IsInvalidLimit(String total) {
 
-        if (mLimitNumbers > 0 && total.length() > mLimitNumbers){
+        if (mLimitNumbers > 0 && total.length() > mLimitNumbers) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    private boolean IsNegativeNumber(String total){
+    private boolean IsNegativeNumber(String total) {
 
-        if(!mLimitNegativeNumbers)
+        if (!mLimitNegativeNumbers)
             return false;
 
-        if(total.equals(""))
+        if (total.equals(""))
             return false;
 
-        if(Double.parseDouble(total) < 0) {
+        if (Double.parseDouble(total) < 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    private String getNumberWithSeparation(String number){
+    private String getNumberWithSeparation(String number) {
 
         int radixLoc = number.indexOf('.');
         String partInt, partDec;
-        if(radixLoc == -1){
+        if (radixLoc == -1) {
             partInt = number;
             partDec = "0";
-        }else{
+        } else {
             partInt = number.substring(0, radixLoc);
             partDec = number.substring(radixLoc + 1, number.length());
         }
@@ -764,10 +761,10 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
             String character = partInt.substring(i, i + 1);
             newStr = character + newStr;
 
-            if(blockIndicator == 2){
+            if (blockIndicator == 2) {
                 blockIndicator = 0;
                 newStr = " " + newStr;
-            }else{
+            } else {
                 blockIndicator++;
             }
         }
@@ -775,7 +772,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         String result;
         if (partDec.equals("0")) {
             result = newStr;
-        }else {
+        } else {
             result = newStr + "." + partDec;
         }
 
@@ -789,10 +786,10 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         String strNum = bd.toPlainString();
         int radixLoc = strNum.indexOf('.');
         String partInt, partDec;
-        if(radixLoc == -1){
+        if (radixLoc == -1) {
             partInt = strNum;
             partDec = "0";
-        }else{
+        } else {
             partInt = strNum.substring(0, radixLoc);
             partDec = strNum.substring(radixLoc + 1, strNum.length());
         }
@@ -813,16 +810,16 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         }
     }
 
-    public String getNumberWithFormat(double num){
+    public String getNumberWithFormat(double num) {
 
         String number = String.valueOf(num);
 
         int radixLoc = number.indexOf('.');
         String partInt, partDec;
-        if(radixLoc == -1){
+        if (radixLoc == -1) {
             partInt = number;
             partDec = "0";
-        }else{
+        } else {
             partInt = number.substring(0, radixLoc);
             partDec = number.substring(radixLoc + 1, number.length());
         }
@@ -834,10 +831,10 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
             String character = partInt.substring(i, i + 1);
             newStr = character + newStr;
 
-            if(blockIndicator == 2){
+            if (blockIndicator == 2) {
                 blockIndicator = 0;
                 newStr = " " + newStr;
-            }else{
+            } else {
                 blockIndicator++;
             }
         }
@@ -845,7 +842,7 @@ public class CalculatorDialog extends DialogFragment implements View.OnClickList
         String result;
         if (partDec.equals("0")) {
             result = newStr;
-        }else {
+        } else {
             result = newStr + "." + partDec;
         }
 
