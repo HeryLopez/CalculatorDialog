@@ -18,7 +18,7 @@ import java.text.DecimalFormat
 class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClickListener {
 
     lateinit var mListener: OnDialogResultListener
-    lateinit var mName: String
+    lateinit var tagDialog: String
 
     var mDecor: String? = null
     var mNumberColor : Int = R.color.numberColor
@@ -57,7 +57,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
-        outState.putString(NAME, mName)
+        outState.putString(NAME, tagDialog)
         outState.putString(DECOR, mDecor)
         outState.putInt(NUMBER_COLOR, mNumberColor)
         outState.putInt(OPERATION_COLOR, mOperationColor)
@@ -77,7 +77,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         // Get information the instance if there is.
         if (savedInstanceState != null) {
-            mName = savedInstanceState.getString(NAME)
+            tagDialog = savedInstanceState.getString(NAME)
             mDecor = savedInstanceState.getString(DECOR)
             mNumberColor = savedInstanceState.getInt(NUMBER_COLOR)
             mOperationColor = savedInstanceState.getInt(OPERATION_COLOR)
@@ -186,16 +186,16 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
      * Show the dialog et set the initial value.
      *
      * @param fragmentManager see [DialogFragment.show].
-     * @param tag             see [DialogFragment.show].
+     * @param tagDialog             see [DialogFragment.show].
      * @param value           initial value
      */
-    fun showDialog(fragmentManager: FragmentManager, tag: String, value: Double) {
-        // set value in list
+    fun showDialog(fragmentManager: FragmentManager, tagDialog: String, value: Double) {
+        this.tagDialog = tagDialog
         calculator.clearOperations()
         calculator.setDoubleInList("" + value)
 
         // Show dialog
-        show(fragmentManager, tag)
+        show(fragmentManager, tagDialog)
     }
 
     override fun onClick(v: View) {
@@ -208,7 +208,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
                 return
             }
             v.id == R.id.buttonOk -> if (thereIsNotError) {
-                mListener.onDialogResult(mName, calculator.totalInDouble, getTotalToShow())
+                mListener.onDialogResult(tagDialog, calculator.totalInDouble, getTotalToShow())
                 this.dismiss()
                 return
             }
@@ -349,7 +349,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
      * Interface for pattern observer
      */
     interface OnDialogResultListener {
-        fun onDialogResult(name: String?, value: Double, valueStr: String)
+        fun onDialogResult(tagDialog: String, value: Double, valueStr: String)
     }
 
     companion object {

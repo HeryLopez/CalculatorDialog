@@ -2,7 +2,6 @@ package com.app.herysapps.calculatordialoglib
 
 class CalculatorDialogBuilder {
     private var onDialogResultListener: CalculatorDialog.OnDialogResultListener? = null
-    private var name: String? = null
     private var decor: String? = null
     private var numberColor: Int? = null
     private var operationColor: Int? = null
@@ -17,25 +16,6 @@ class CalculatorDialogBuilder {
 
     fun setOnResultListener(onDialogResultListener: CalculatorDialog.OnDialogResultListener){
         this.onDialogResultListener = onDialogResultListener
-    }
-
-    /**
-     * Set an identifier that allows identifier the instance.
-     * (For multiples dialogs in screen)
-     *
-     * override onCalculatorDialogResponse(String name, double value, String valueStr) {
-     *      if (name.equals(DIALOG_01)) {
-     *      }
-     *
-     *      if (name.equals(DIALOG_02)) {
-     *      }
-     * }
-     *
-     * @param name calculator dialog id
-     */
-    fun setName(name: String): CalculatorDialogBuilder {
-        this.name = name
-        return this
     }
 
     /**
@@ -142,24 +122,18 @@ class CalculatorDialogBuilder {
             throw RuntimeException("CalculatorDialog.OnDialogResultListener must be implemented")
         }
 
-        if (name == "") {
-            throw RuntimeException("CalculatorDialog instance must initialize the Name property (setName).")
-        }
-
         if (limitNumbers != null && limitNumbers!! < 0) {
             throw RuntimeException("The limit must be greater than or equal to zero.")
         }
 
         val dialog = CalculatorDialog()
         dialog.mListener = onDialogResultListener!!
-        dialog.mName = name!!
 
         if(decor != null) dialog.mDecor = decor
         if(numberColor != null) dialog.mNumberColor = numberColor!!
         if(operationColor != null) dialog.mOperationColor = operationColor!!
         if(numberBackgroundColor != null) dialog.mNumberBackgroundColor = numberBackgroundColor!!
         if(operatorBackgroundColor != null) dialog.mOperatorBackgroundColor = operatorBackgroundColor!!
-
         if(dialogButtonsColor != null) dialog.mDialogButtonsColor = dialogButtonsColor!!
         if(limitNumbers != null) dialog.mLimitNumbers = limitNumbers!!
         if(limitNegativeNumbers != null) dialog.mLimitNegativeNumbers = limitNegativeNumbers!!
