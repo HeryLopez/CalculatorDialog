@@ -60,12 +60,12 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="start"
                     android:gravity="end"
-                    android:lines="1"
-                    android:maxLines="1"
                     android:scrollbars="horizontal"
                     android:text="@string/dummy"
                     android:textColor="@color/valueOperationColor"
-                    android:textSize="@dimen/operationTextSize" />
+                    android:textSize="@dimen/operationTextSize"
+
+                    />
 
             </HorizontalScrollView>
 
@@ -76,11 +76,11 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="start"
                 android:gravity="end"
-                android:lines="1"
                 android:scrollHorizontally="true"
                 android:text="@string/dummy"
                 android:textColor="@color/valueTotalColor"
-                android:textSize="@dimen/valueTextSize" />
+                android:textSize="@dimen/valueTextSize"
+                android:singleLine="true" />
 
         </LinearLayout>
     </LinearLayout>
