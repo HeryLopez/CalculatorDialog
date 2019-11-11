@@ -106,8 +106,9 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <Button
+                <TextView
                     android:id="@+id/button07"
+                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
@@ -115,6 +116,7 @@
                     android:text="@string/num07"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
+                
 
                 <Button
                     android:id="@+id/button08"

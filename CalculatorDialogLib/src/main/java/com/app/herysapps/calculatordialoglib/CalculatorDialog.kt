@@ -133,7 +133,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
         view.findViewById<Button>(R.id.button04).setOnClickListener(this)
         view.findViewById<Button>(R.id.button05).setOnClickListener(this)
         view.findViewById<Button>(R.id.button06).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button07).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button07).setOnClickListener(this)
         view.findViewById<Button>(R.id.button08).setOnClickListener(this)
         view.findViewById<Button>(R.id.button09).setOnClickListener(this)
         view.findViewById<Button>(R.id.buttonEqual).setOnClickListener(this)
@@ -163,7 +163,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
 
         (view.findViewById(R.id.button09) as Button).setTextColor(numberColor)
         (view.findViewById(R.id.button08) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button07) as Button).setTextColor(numberColor)
+        (view.findViewById(R.id.button07) as TextView).setTextColor(numberColor)
         (view.findViewById(R.id.button06) as Button).setTextColor(numberColor)
         (view.findViewById(R.id.button05) as Button).setTextColor(numberColor)
         (view.findViewById(R.id.button04) as Button).setTextColor(numberColor)
