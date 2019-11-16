@@ -38,12 +38,12 @@
             android:layout_weight="0.8"
             android:gravity="end"
             android:orientation="vertical"
-            android:paddingBottom="16dp"
-            android:paddingEnd="16dp"
             android:paddingStart="0dp"
             android:paddingLeft="0dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
             android:paddingRight="16dp"
-            android:paddingTop="16dp">
+            android:paddingBottom="16dp">
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScroll"
@@ -77,10 +77,10 @@
                 android:ellipsize="start"
                 android:gravity="end"
                 android:scrollHorizontally="true"
+                android:singleLine="true"
                 android:text="@string/dummy"
                 android:textColor="@color/valueTotalColor"
-                android:textSize="@dimen/valueTextSize"
-                android:singleLine="true" />
+                android:textSize="@dimen/valueTextSize" />
 
         </LinearLayout>
     </LinearLayout>
@@ -106,32 +106,36 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <Button
+                <TextView
                     android:id="@+id/button07"
                     android:layout_width="0dp"
+
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num07"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
 
-                <Button
+                <TextView
                     android:id="@+id/button08"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num08"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
 
-                <Button
+                <TextView
                     android:id="@+id/button09"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num09"
 
                     android:textColor="@color/numberColor"
@@ -145,32 +149,35 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <Button
+                <TextView
                     android:id="@+id/button04"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num04"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
 
-                <Button
+                <TextView
                     android:id="@+id/button05"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num05"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
 
-                <Button
+                <TextView
                     android:id="@+id/button06"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num06"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
@@ -183,32 +190,35 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <Button
+                <TextView
                     android:id="@+id/button01"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num01"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
 
-                <Button
+                <TextView
                     android:id="@+id/button02"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num02"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
 
-                <Button
+                <TextView
                     android:id="@+id/button03"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num03"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
@@ -221,32 +231,35 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <Button
+                <TextView
                     android:id="@+id/buttonPoint"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/numPoint"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
 
-                <Button
+                <TextView
                     android:id="@+id/button00"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/num00"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
 
-                <Button
+                <TextView
                     android:id="@+id/buttonEqual"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:background="@drawable/background_button"
+                    android:gravity="center"
                     android:text="@string/numEqual"
                     android:textColor="@color/numberColor"
                     android:textSize="@dimen/numberTextSize" />
@@ -265,45 +278,50 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageButtonDel"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/background_button"
+                android:scaleType="center"
                 app:srcCompat="@drawable/ic_backspace" />
 
-            <Button
+            <TextView
                 android:id="@+id/buttonDivision"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/background_button"
+                android:gravity="center"
                 android:text="@string/division"
                 android:textColor="@color/operatorColor"
                 android:textSize="@dimen/operatorTextSize" />
 
-            <Button
+            <TextView
                 android:id="@+id/buttonMultiplication"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/background_button"
+                android:gravity="center"
                 android:text="@string/multiplication"
                 android:textColor="@color/operatorColor"
                 android:textSize="@dimen/operatorTextSize" />
 
-            <Button
+            <TextView
                 android:id="@+id/buttonSubtraction"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/background_button"
+                android:gravity="center"
                 android:text="@string/subtraction"
                 android:textColor="@color/operatorColor"
                 android:textSize="@dimen/operatorTextSize" />
 
-            <Button
+            <TextView
                 android:id="@+id/buttonSum"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/background_button"
+                android:gravity="center"
                 android:text="@string/sum"
                 android:textColor="@color/operatorColor"
                 android:textSize="@dimen/operatorTextSize" />
@@ -319,19 +337,27 @@
         android:gravity="end"
         android:orientation="horizontal">
 
-        <Button
+        <TextView
             android:id="@+id/buttonCancel"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:background="@drawable/background_button"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
             android:text="@string/negative_button"
             android:textColor="@color/dialogButtons" />
 
-        <Button
+        <TextView
             android:id="@+id/buttonOk"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:background="@drawable/background_button"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
             android:text="@string/positive_button"
             android:textColor="@color/dialogButtons" />
 

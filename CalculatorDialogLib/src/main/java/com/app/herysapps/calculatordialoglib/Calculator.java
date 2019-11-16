@@ -26,6 +26,10 @@ public class Calculator {
         }
     }
 
+    public void deleteAll(){
+        operations.clear();
+    }
+
     // Delete
     public void deleteNumber() {
         if (operations.size() > 0) {
@@ -61,13 +65,17 @@ public class Calculator {
             Character tmp = operations.get(operations.size() - 1);
             if (tmp.getType() == Type.NUMBER) {
                 if (isPoint) {
-                    boolean b = tmp.getValue().contains(s);
-                    if (b) {
+                    // If there is one point separator
+                    if (tmp.getValue().contains(s)) {
                         return;
                     }
                 }
 
-                tmp.setValue(tmp.getValue() + s);
+                if(tmp.getValue().equals("0")){
+                    tmp.setValue(s);
+                } else {
+                    tmp.setValue(tmp.getValue() + s);
+                }
                 operations.set(operations.size() - 1, tmp);
             } else {
                 if (!isPoint) {

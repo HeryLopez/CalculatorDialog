@@ -126,26 +126,31 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
         mTextViewOperation.movementMethod = ScrollingMovementMethod()
         horizontalScrollView = view.findViewById(R.id.horizontalScroll) as HorizontalScrollView
 
-        view.findViewById<Button>(R.id.button00).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button01).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button02).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button03).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button04).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button05).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button06).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button07).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button08).setOnClickListener(this)
-        view.findViewById<Button>(R.id.button09).setOnClickListener(this)
-        view.findViewById<Button>(R.id.buttonEqual).setOnClickListener(this)
-        view.findViewById<Button>(R.id.buttonPoint).setOnClickListener(this)
-        view.findViewById<ImageButton>(R.id.imageButtonDel).setOnClickListener(this)
-        view.findViewById<Button>(R.id.buttonDivision).setOnClickListener(this)
-        view.findViewById<Button>(R.id.buttonMultiplication).setOnClickListener(this)
-        view.findViewById<Button>(R.id.buttonSubtraction).setOnClickListener(this)
-        view.findViewById<Button>(R.id.buttonSum).setOnClickListener(this)
-        view.findViewById<Button>(R.id.buttonCancel).setOnClickListener(this)
-        view.findViewById<Button>(R.id.buttonOk).setOnClickListener(this)
-        view.findViewById<ImageButton>(R.id.imageButtonDel).setOnLongClickListener(this)
+        view.findViewById<TextView>(R.id.button00).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button01).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button02).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button03).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button04).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button05).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button06).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button07).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button08).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.button09).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.buttonEqual).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.buttonPoint).setOnClickListener(this)
+        view.findViewById<ImageView>(R.id.imageButtonDel).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.buttonDivision).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.buttonMultiplication).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.buttonSubtraction).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.buttonSum).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.buttonCancel).setOnClickListener(this)
+        view.findViewById<TextView>(R.id.buttonOk).setOnClickListener(this)
+
+        view.findViewById<ImageView>(R.id.imageButtonDel).setOnLongClickListener {
+            calculator.deleteAll()
+            updateUI()
+            true
+        }
 
         // -----------------------------------------------------------------------------------------
         // Colors
@@ -158,28 +163,28 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
         view.findViewById<LinearLayout>(R.id.numbers).setBackgroundResource(mNumberBackgroundColor)
         view.findViewById<LinearLayout>(R.id.operators).setBackgroundResource(mOperatorBackgroundColor)
 
-        view.findViewById<Button>(R.id.buttonCancel).setTextColor(dialogButtonsColor)
-        view.findViewById<Button>(R.id.buttonOk).setTextColor(dialogButtonsColor)
+        view.findViewById<TextView>(R.id.buttonCancel).setTextColor(dialogButtonsColor)
+        view.findViewById<TextView>(R.id.buttonOk).setTextColor(dialogButtonsColor)
 
-        (view.findViewById(R.id.button09) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button08) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button07) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button06) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button05) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button04) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button03) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button02) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button01) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.button00) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.buttonEqual) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.buttonPoint) as Button).setTextColor(numberColor)
-        (view.findViewById(R.id.buttonPoint) as Button).text = mSeparator
+        (view.findViewById(R.id.button09) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.button08) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.button07) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.button06) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.button05) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.button04) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.button03) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.button02) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.button01) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.button00) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.buttonEqual) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.buttonPoint) as TextView).setTextColor(numberColor)
+        (view.findViewById(R.id.buttonPoint) as TextView).text = mSeparator
 
-        (view.findViewById(R.id.imageButtonDel) as ImageButton).setColorFilter(operationColor)
-        (view.findViewById(R.id.buttonDivision) as Button).setTextColor(operationColor)
-        (view.findViewById(R.id.buttonMultiplication) as Button).setTextColor(operationColor)
-        (view.findViewById(R.id.buttonSubtraction) as Button).setTextColor(operationColor)
-        (view.findViewById(R.id.buttonSum) as Button).setTextColor(operationColor)
+        (view.findViewById(R.id.imageButtonDel) as ImageView).setColorFilter(operationColor)
+        (view.findViewById(R.id.buttonDivision) as TextView).setTextColor(operationColor)
+        (view.findViewById(R.id.buttonMultiplication) as TextView).setTextColor(operationColor)
+        (view.findViewById(R.id.buttonSubtraction) as TextView).setTextColor(operationColor)
+        (view.findViewById(R.id.buttonSum) as TextView).setTextColor(operationColor)
     }
 
     /**
@@ -238,6 +243,10 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
             v.id == R.id.button00 -> calculator.updateNumber("0", false)
         }
 
+        updateUI()
+    }
+
+    private fun updateUI(){
         mTextViewOperation.text = calculator.operation
         mTextViewValue.text = getTotalToShow()
 
