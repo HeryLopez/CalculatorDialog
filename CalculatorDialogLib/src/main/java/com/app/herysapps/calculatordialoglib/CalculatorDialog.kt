@@ -225,7 +225,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
             R.id.imageButtonOk -> if (thereIsNotError) {
                 mListener.onDialogResult(tagDialog, calculator.totalInDouble, getTotalToShow())
                 this.dismiss()
-                activity?.supportFragmentManager?.popBackStack()
+                //activity?.supportFragmentManager?.popBackStack()
                 return
             }
             R.id.buttonEqual -> if (thereIsNotError) {
