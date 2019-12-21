@@ -13,7 +13,6 @@ import androidx.fragment.app.DialogFragment
 import java.math.BigDecimal
 import java.text.DecimalFormat
 
-
 /**
  * Github: [https://github.com/HeryLopez/CalculatorDialog](https://github.com/HeryLopez/CalculatorDialog)
  */
@@ -226,6 +225,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
             R.id.imageButtonOk -> if (thereIsNotError) {
                 mListener.onDialogResult(tagDialog, calculator.totalInDouble, getTotalToShow())
                 this.dismiss()
+                activity?.supportFragmentManager?.popBackStack()
                 return
             }
             R.id.buttonEqual -> if (thereIsNotError) {
@@ -380,5 +380,10 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
         private const val ERROR_LIMIT = "ERROR_LIMIT"
         private const val ERROR_NEGATIVE_NUMBERS = "ERROR_NEGATIVE_NUMBERS"
         private const val VALUE = "VALUE"
+
+
+        @JvmStatic
+        fun newInstance(): CalculatorDialog = CalculatorDialog()
+
     }
 }

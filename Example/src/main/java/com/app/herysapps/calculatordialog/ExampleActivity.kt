@@ -2,17 +2,14 @@ package com.app.herysapps.calculatordialog
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import com.app.herysapps.calculatordialoglib.CalculatorDialog
 import com.app.herysapps.calculatordialoglib.CalculatorDialog.OnDialogResultListener
 import com.app.herysapps.calculatordialoglib.CalculatorDialogBuilder
 import kotlinx.android.synthetic.main.activity_example.*
 
 /**
- * Examples of use.
- *
- *
  * Created by Hery Lopez on 10/08/2017.
- *
  *
  * Github:
  * Author: https://github.com/HeryLopez
@@ -54,10 +51,10 @@ class ExampleActivity : AppCompatActivity(), OnDialogResultListener {
         dialogB = builderDialog2.build()
     }
 
-    private fun openFullscreenDialog(dialog: CalculatorDialog) {
-        val fragmentManager = supportFragmentManager
-        val transaction = fragmentManager.beginTransaction()
-        transaction.add(android.R.id.content, dialog).addToBackStack(null).commit()
+    private fun openFullscreenDialog(dialog: CalculatorDialog, name: String) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+        transaction.replace(android.R.id.content, dialog).addToBackStack(null).commit()
     }
 
     private fun example1() {
@@ -68,7 +65,7 @@ class ExampleActivity : AppCompatActivity(), OnDialogResultListener {
             dialogA!!.setInitialValue(v1)
             dialogA!!.setDialogId(ID_DIALOG_EXAMPLE_1)
             if (isFullscreenModelActive) {
-                openFullscreenDialog(dialogA!!)
+                openFullscreenDialog(dialogA!!, ID_DIALOG_EXAMPLE_1)
             } else {
                 dialogA!!.show(supportFragmentManager, ID_DIALOG_EXAMPLE_1)
             }
@@ -80,12 +77,11 @@ class ExampleActivity : AppCompatActivity(), OnDialogResultListener {
             dialogA!!.setInitialValue(v2)
             dialogA!!.setDialogId(ID_DIALOG_EXAMPLE_2)
             if (isFullscreenModelActive) {
-                openFullscreenDialog(dialogA!!)
+                openFullscreenDialog(dialogA!!, ID_DIALOG_EXAMPLE_2)
             } else {
                 dialogA!!.show(supportFragmentManager, ID_DIALOG_EXAMPLE_2)
             }
         }
-
     }
 
     private fun example3() {
@@ -96,11 +92,10 @@ class ExampleActivity : AppCompatActivity(), OnDialogResultListener {
             dialogB!!.setInitialValue(v3)
             dialogB!!.setDialogId(ID_DIALOG_EXAMPLE_3)
             if (isFullscreenModelActive) {
-                openFullscreenDialog(dialogB!!)
+                openFullscreenDialog(dialogB!!, ID_DIALOG_EXAMPLE_3)
             } else {
                 dialogB!!.show(supportFragmentManager, ID_DIALOG_EXAMPLE_3)
             }
-
         }
     }
 
@@ -117,8 +112,6 @@ class ExampleActivity : AppCompatActivity(), OnDialogResultListener {
         example1()
         example2()
         example3()
-
-
     }
 
 
@@ -135,6 +128,5 @@ class ExampleActivity : AppCompatActivity(), OnDialogResultListener {
             textView3.text = valueStr
             v3 = value
         }
-
     }
 }

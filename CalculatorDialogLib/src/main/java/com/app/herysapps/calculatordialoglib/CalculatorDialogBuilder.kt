@@ -126,7 +126,7 @@ class CalculatorDialogBuilder {
             throw RuntimeException("The limit must be greater than or equal to zero.")
         }
 
-        val dialog = CalculatorDialog()
+        val dialog = CalculatorDialog.newInstance()
         dialog.mListener = onDialogResultListener!!
 
         if (decor != null) dialog.mDecor = decor
