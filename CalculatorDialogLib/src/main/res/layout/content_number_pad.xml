@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/numbers"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/numberBackgroundColor"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/button01"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num01"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toTopOf="@+id/button04"
+        app:layout_constraintEnd_toStartOf="@+id/button02"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/button02"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num02"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toTopOf="@+id/button05"
+        app:layout_constraintEnd_toStartOf="@+id/button03"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/button03"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num03"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toTopOf="@+id/button06"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button02"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/button04"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num04"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toTopOf="@+id/button07"
+        app:layout_constraintEnd_toStartOf="@+id/button05"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button01" />
+
+
+    <TextView
+        android:id="@+id/button05"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num05"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toTopOf="@+id/button08"
+        app:layout_constraintEnd_toStartOf="@+id/button06"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button04"
+        app:layout_constraintTop_toBottomOf="@+id/button02" />
+
+    <TextView
+        android:id="@+id/button06"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num06"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toTopOf="@+id/button09"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button05"
+        app:layout_constraintTop_toBottomOf="@+id/button03" />
+
+
+    <TextView
+        android:id="@+id/button07"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num07"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPoint"
+        app:layout_constraintEnd_toStartOf="@+id/button08"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button04" />
+
+    <TextView
+        android:id="@+id/button08"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num08"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toTopOf="@+id/button00"
+        app:layout_constraintEnd_toStartOf="@+id/button09"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button07"
+        app:layout_constraintTop_toBottomOf="@+id/button05" />
+
+    <TextView
+        android:id="@+id/button09"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num09"
+
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEqual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button08"
+        app:layout_constraintTop_toBottomOf="@+id/button06" />
+
+
+    <TextView
+        android:id="@+id/buttonPoint"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/numPoint"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button00"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button07" />
+
+    <TextView
+        android:id="@+id/button00"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/num00"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEqual"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonPoint"
+        app:layout_constraintTop_toBottomOf="@+id/button08" />
+
+    <TextView
+        android:id="@+id/buttonEqual"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/background_button"
+        android:gravity="center"
+        android:text="@string/numEqual"
+        android:textColor="@color/numberColor"
+        android:textSize="@dimen/numberTextSizeFullscreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button00"
+        app:layout_constraintTop_toBottomOf="@+id/button09" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

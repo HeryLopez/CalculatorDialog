@@ -11,6 +11,7 @@
     <color name="numberBackgroundColor">#00695C</color>
     <color name="operatorColor">#ffffff</color>
     <color name="operatorBackgroundColor">#4DB6AC</color>
-    <color name="dialogButtons">#4DB6AC</color>
+    <color name="okBackgroundColor">#B64D65</color>
+
 
 </resources>

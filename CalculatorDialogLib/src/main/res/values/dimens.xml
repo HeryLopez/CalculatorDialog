@@ -3,6 +3,10 @@
     <dimen name="numberTextSize">30sp</dimen>
     <dimen name="operatorTextSize">22sp</dimen>
 
+    <dimen name="numberTextSizeFullscreen">30sp</dimen>
+    <dimen name="operatorTextSizeFullscreen">25sp</dimen>
+
+
 
     <dimen name="operationTextSize">36sp</dimen>
     <dimen name="valueTextSize">24sp</dimen>

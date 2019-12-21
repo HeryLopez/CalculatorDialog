@@ -26,7 +26,7 @@ public class Calculator {
         }
     }
 
-    public void deleteAll(){
+    public void deleteAll() {
         operations.clear();
     }
 
@@ -71,7 +71,7 @@ public class Calculator {
                     }
                 }
 
-                if(tmp.getValue().equals("0")){
+                if (tmp.getValue().equals("0")) {
                     tmp.setValue(s);
                 } else {
                     tmp.setValue(tmp.getValue() + s);

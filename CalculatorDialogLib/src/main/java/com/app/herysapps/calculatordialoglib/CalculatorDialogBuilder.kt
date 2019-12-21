@@ -7,14 +7,14 @@ class CalculatorDialogBuilder {
     private var operationColor: Int? = null
     private var numberBackgroundColor: Int? = null
     private var operatorBackgroundColor: Int? = null
-    private var dialogButtonsColor: Int? = null
+    private var okBackgroundColor: Int? = null
     private var limitNumbers: Int? = null
     private var limitNegativeNumbers: Boolean? = null
     private var errorDiv0: String? = null
     private var errorLimitNumber: String? = null
     private var errorNegativeValue: String? = null
 
-    fun setOnResultListener(onDialogResultListener: CalculatorDialog.OnDialogResultListener){
+    fun setOnResultListener(onDialogResultListener: CalculatorDialog.OnDialogResultListener) {
         this.onDialogResultListener = onDialogResultListener
     }
 
@@ -64,12 +64,12 @@ class CalculatorDialogBuilder {
     }
 
     /**
-     * Set the color for the dialog buttons
+     * Set the background color for the ok button
      *
-     * @param dialogButtonsColor color resource
+     * @param okBackgroundColor color resource
      */
-    fun setDialogButtonsColor(dialogButtonsColor: Int) {
-        this.dialogButtonsColor = dialogButtonsColor
+    fun setOkBackgroundColor(okBackgroundColor: Int) {
+        this.okBackgroundColor = okBackgroundColor
     }
 
     /**
@@ -129,17 +129,17 @@ class CalculatorDialogBuilder {
         val dialog = CalculatorDialog()
         dialog.mListener = onDialogResultListener!!
 
-        if(decor != null) dialog.mDecor = decor
-        if(numberColor != null) dialog.mNumberColor = numberColor!!
-        if(operationColor != null) dialog.mOperationColor = operationColor!!
-        if(numberBackgroundColor != null) dialog.mNumberBackgroundColor = numberBackgroundColor!!
-        if(operatorBackgroundColor != null) dialog.mOperatorBackgroundColor = operatorBackgroundColor!!
-        if(dialogButtonsColor != null) dialog.mDialogButtonsColor = dialogButtonsColor!!
-        if(limitNumbers != null) dialog.mLimitNumbers = limitNumbers!!
-        if(limitNegativeNumbers != null) dialog.mLimitNegativeNumbers = limitNegativeNumbers!!
-        if(errorDiv0 != null) dialog.mErrorDiv0 = errorDiv0!!
-        if(errorLimitNumber != null) dialog.mErrorLimitNumber = errorLimitNumber!!
-        if(errorNegativeValue != null) dialog.mErrorNegativeValue = errorNegativeValue!!
+        if (decor != null) dialog.mDecor = decor
+        if (numberColor != null) dialog.mNumberColor = numberColor!!
+        if (operationColor != null) dialog.mOperationColor = operationColor!!
+        if (numberBackgroundColor != null) dialog.mNumberBackgroundColor = numberBackgroundColor!!
+        if (operatorBackgroundColor != null) dialog.mOperatorBackgroundColor = operatorBackgroundColor!!
+        if (okBackgroundColor != null) dialog.mOkBackgroundColor = okBackgroundColor!!
+        if (limitNumbers != null) dialog.mLimitNumbers = limitNumbers!!
+        if (limitNegativeNumbers != null) dialog.mLimitNegativeNumbers = limitNegativeNumbers!!
+        if (errorDiv0 != null) dialog.mErrorDiv0 = errorDiv0!!
+        if (errorLimitNumber != null) dialog.mErrorLimitNumber = errorLimitNumber!!
+        if (errorNegativeValue != null) dialog.mErrorNegativeValue = errorNegativeValue!!
 
         return dialog
     }
