@@ -35,6 +35,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
 
     private lateinit var mTextViewValue: TextView
     private lateinit var mTextViewOperation: TextView
+    private lateinit var mTextViewError: TextView
     private var horizontalScrollView: HorizontalScrollView? = null
 
     private val mSeparator: String
@@ -137,6 +138,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
     private fun setupResultComponents(view: View) {
         mTextViewOperation = view.findViewById(R.id.textViewValueOperation) as TextView
         mTextViewValue = view.findViewById(R.id.textViewValue) as TextView
+        mTextViewError = view.findViewById(R.id.textViewError) as TextView
 
         view.findViewById<TextView>(R.id.textViewSymbol).text = mDecor
 
@@ -271,44 +273,55 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
         }, 100L)
     }
 
+
+
     private fun getTotalToShow(): String {
         val result: String
         var total = calculator.total
-        when {
-            isInfinity(total) -> result = mErrorDiv0
-            isInvalidLimit(total) -> result = mErrorLimitNumber
-            isNegativeNumber(total) -> result = mErrorNegativeValue
-            else -> {
-                val bd = BigDecimal(if (total != "") total else "0")
-                total = bd.toPlainString()
-                result = calculator.getNumberWithSeparation(total)
-            }
+        if (validateAndShowError(total)){
+            result = ""
+        } else {
+            val bd = BigDecimal(if (total != "") total else "0")
+            total = bd.toPlainString()
+            result = calculator.getNumberWithSeparation(total)
         }
 
         return result.replace(".", mSeparator)
     }
 
+    private fun validateAndShowError(total: String): Boolean {
+        val error = when {
+            isInfinity(total) -> mErrorDiv0
+            isInvalidLimit(total) -> mErrorLimitNumber
+            isNegativeNumber(total) -> mErrorNegativeValue
+            else -> null
+        }
+
+        return if(error != null){
+            mTextViewValue.visibility = View.INVISIBLE
+            mTextViewError.visibility = View.VISIBLE
+            mTextViewError.text = error
+            mTextViewError.textSize = 15F
+            true
+        }else {
+            mTextViewValue.visibility = View.VISIBLE
+            mTextViewError.visibility = View.INVISIBLE
+            false
+        }
+    }
+
     private fun isInfinity(total: String): Boolean {
-
-        if (total == "")
-            return false
-
+        if (total == "") return false
         return java.lang.Double.parseDouble(total) == java.lang.Double.POSITIVE_INFINITY || java.lang.Double.parseDouble(total) == java.lang.Double.POSITIVE_INFINITY
     }
 
     private fun isInvalidLimit(total: String): Boolean {
-
         return mLimitNumbers > 0 && total.length > mLimitNumbers
     }
 
     private fun isNegativeNumber(total: String): Boolean {
-
-        if (!mLimitNegativeNumbers)
-            return false
-
-        if (total == "")
-            return false
-
+        if (!mLimitNegativeNumbers) return false
+        if (total == "") return false
         return java.lang.Double.parseDouble(total) < 0
     }
 

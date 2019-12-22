@@ -10,4 +10,5 @@
 
     <dimen name="operationTextSize">36sp</dimen>
     <dimen name="valueTextSize">24sp</dimen>
+    <dimen name="valueTextError">18sp</dimen>
 </resources>

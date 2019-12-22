@@ -5,6 +5,7 @@
 
     <color name="valueOperationColor">#838383</color>
     <color name="valueTotalColor">#caaeaeae</color>
+    <color name="valueTotalError">#B64D65</color>
 
     <!-- Default colors -->
     <color name="numberColor">#ffffff</color>
