@@ -5,12 +5,15 @@
 
     <color name="valueOperationColor">#838383</color>
     <color name="valueTotalColor">#caaeaeae</color>
+    <color name="valueTotalError">#B64D65</color>
 
     <!-- Default colors -->
     <color name="numberColor">#ffffff</color>
     <color name="numberBackgroundColor">#00695C</color>
     <color name="operatorColor">#ffffff</color>
     <color name="operatorBackgroundColor">#4DB6AC</color>
-    <color name="dialogButtons">#4DB6AC</color>
+    <color name="okColor">#ffffff</color>
+    <color name="okBackgroundColor">#B64D65</color>
+
 
 </resources>

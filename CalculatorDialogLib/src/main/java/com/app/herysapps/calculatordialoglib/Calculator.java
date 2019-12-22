@@ -26,7 +26,7 @@ public class Calculator {
         }
     }
 
-    public void deleteAll(){
+    public void deleteAll() {
         operations.clear();
     }
 
@@ -60,23 +60,32 @@ public class Calculator {
     // Numbers
     public void updateNumber(String s, boolean isPoint) {
         if (operations.size() <= 0) {
-            addNumber(s);
+            if (isPoint) {
+                addNumber("0" + s);
+            } else {
+                addNumber(s);
+            }
         } else {
-            Character tmp = operations.get(operations.size() - 1);
-            if (tmp.getType() == Type.NUMBER) {
+            Character lastCharacter = operations.get(operations.size() - 1);
+            if (lastCharacter.getType() == Type.NUMBER) {
+                String lastCharacterValue = lastCharacter.getValue();
                 if (isPoint) {
                     // If there is one point separator
-                    if (tmp.getValue().contains(s)) {
+                    if (lastCharacterValue.contains(s)) {
                         return;
                     }
                 }
 
-                if(tmp.getValue().equals("0")){
-                    tmp.setValue(s);
+                if (lastCharacterValue.equals("0")) {
+                    if (isPoint) {
+                        lastCharacter.setValue(lastCharacterValue + s);
+                    } else {
+                        lastCharacter.setValue(s);
+                    }
                 } else {
-                    tmp.setValue(tmp.getValue() + s);
+                    lastCharacter.setValue(lastCharacterValue + s);
                 }
-                operations.set(operations.size() - 1, tmp);
+                operations.set(operations.size() - 1, lastCharacter);
             } else {
                 if (!isPoint) {
                     addNumber(s);

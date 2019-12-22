@@ -1,130 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fadeScrollbars="false"
-    tools:context="com.app.herysapps.calculatordialog.ExampleActivity">
+    android:background="#ffffff"
+    tools:context="com.app.herysapps.calculatordialoglib.CalculatorDialog">
 
-    <RelativeLayout
-        android:id="@+id/activity_example"
+    <Switch
+        android:id="@+id/switchFullscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Full Screen Model"
+        android:thumbTextPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitre1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Dialog A with ID for example 1"
+        android:textColor="#de000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchFullscreen" />
 
-        <RelativeLayout
-            android:id="@+id/layoutExample01"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp">
+    <Button
+        android:id="@+id/buttonSelector01"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="16dp"
+        android:text="Open Dialog"
+        app:layout_constraintStart_toStartOf="@+id/textViewTitre1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitre1" />
 
-            <TextView
-                android:id="@+id/textViewTitre1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:text="@string/example_1"
-                android:textColor="#de000000"
-                android:textSize="14sp" />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_alignTop="@+id/buttonSelector01"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toEndOf="@+id/buttonSelector01"
+        android:layout_toRightOf="@+id/buttonSelector01"
+        android:background="#DBDBDB"
+        android:gravity="center"
+        android:textColor="#de000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSelector01"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTitre1"
+        app:layout_constraintStart_toEndOf="@+id/buttonSelector01"
+        app:layout_constraintTop_toTopOf="@+id/buttonSelector01" />
 
-            <TextView
-                android:id="@+id/textViewDesc1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textViewTitre1"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="6dp"
-                android:text="@string/example_1_text"
-                android:textColor="#8a000000"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/buttonSelector01"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/textViewDesc1"
-                android:text="@string/button_label" />
-
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_alignTop="@+id/buttonSelector01"
-                android:layout_toEndOf="@+id/buttonSelector01"
-                android:layout_toRightOf="@+id/buttonSelector01"
-                android:gravity="center"
-                android:textColor="#de000000"
-                android:textSize="14sp" />
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layoutLine"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/layoutExample01"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="4dp"
-            android:background="#000000" />
-
-        <RelativeLayout
-            android:id="@+id/layoutExample02"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/layoutLine"
-            android:layout_margin="8dp">
+    <View
+        android:id="@+id/layoutLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSelector01" />
 
 
-            <TextView
-                android:id="@+id/textViewTitre2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:text="@string/example_2"
-                android:textColor="#de000000"
-                android:textSize="14sp" />
+    <TextView
+        android:id="@+id/textViewTitre2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Dialog A with ID for example 2"
+        android:textColor="#de000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutLine" />
 
-            <TextView
-                android:id="@+id/textViewDesc2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textViewTitre2"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="6dp"
-                android:text="@string/example_2_text"
-                android:textColor="#8a000000"
-                android:textSize="12sp" />
+    <Button
+        android:id="@+id/buttonSelector02"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="16dp"
+        android:text="Open Dialog"
+        app:layout_constraintStart_toStartOf="@+id/textViewTitre2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitre2" />
 
-            <Button
-                android:id="@+id/buttonSelector02"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/textViewDesc2"
-                android:text="@string/button_label" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_alignTop="@+id/buttonSelector02"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toEndOf="@+id/buttonSelector02"
+        android:layout_toRightOf="@+id/buttonSelector02"
+        android:background="#DBDBDB"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#de000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSelector02"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTitre2"
+        app:layout_constraintStart_toEndOf="@+id/buttonSelector02"
+        app:layout_constraintTop_toTopOf="@+id/buttonSelector02" />
+
+    <View
+        android:id="@+id/layoutLine2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSelector02" />
 
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_alignTop="@+id/buttonSelector02"
-                android:layout_toEndOf="@+id/buttonSelector02"
-                android:layout_toRightOf="@+id/buttonSelector02"
-                android:gravity="center"
-                android:text=""
-                android:textColor="#de000000"
-                android:textSize="14sp" />
+    <TextView
+        android:id="@+id/textViewTitre3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Dialog B with ID for example 3 and another style"
+        android:textColor="#de000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutLine2" />
+
+    <Button
+        android:id="@+id/buttonSelector03"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="16dp"
+        android:text="Open Dialog"
+        app:layout_constraintStart_toStartOf="@+id/textViewTitre3"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitre3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_alignTop="@+id/buttonSelector02"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toEndOf="@+id/buttonSelector02"
+        android:layout_toRightOf="@+id/buttonSelector02"
+        android:background="#DBDBDB"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#de000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSelector03"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTitre2"
+        app:layout_constraintStart_toEndOf="@+id/buttonSelector03"
+        app:layout_constraintTop_toTopOf="@+id/buttonSelector03" />
+
+    <View
+        android:id="@+id/layoutLine3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSelector03" />
 
 
-        </RelativeLayout>
-
-    </RelativeLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

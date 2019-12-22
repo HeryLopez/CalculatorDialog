@@ -1,18 +1,5 @@
 <resources>
     <string name="app_name">Calculator Dialog</string>
-
-    <string name="div_0_error">Division par 0 impossible</string>
-    <string name="limit_number_error">Limite de nombre dépassée</string>
-    <string name="limit_negative_number">Numéros négatifs désactivés</string>
-
-
-    <string name="button_label">Button</string>
-
-    <string name="example_1">Example 1</string>
-    <string name="example_1_text">CalculatorDialog cal = new CalculatorDialog();\n\ncal.setName(DIALOG_01);\ncal.limitNumbers(20);\ncal.negativeNumberActivated(true);\ncal.setErrorDiv0(getString(R.string.div_0_error));\ncal.setErrorLimit(getString(R.string.limit_number_error));\ncal.setErrorNegativeValue(getString(R.string.limit_negative_number));\n\ndouble v = 1234567.89;\ncal.showDialog(getSupportFragmentManager(), \"dialog\", v);</string>
-
-    <string name="example_2">Example 2</string>
-    <string name="example_2_text">CalculatorDialog cal = new CalculatorDialog();\n\ncal.setName(DIALOG_02);\ncal.setDecor(\"$\");\ncal.setNumberColor(R.color.color01);\ncal.setOperationColor(R.color.color01);\ncal.setNumberBackgroundColor(R.color.color02);\ncal.setOperatorBackgroundColor(R.color.color02);\ncal.setDialogButtonsColor(R.color.color01);\n\ndouble v = 0;\ncal.showDialog(getSupportFragmentManager(), \"dialog\", v);</string>
 </resources>
 
 
