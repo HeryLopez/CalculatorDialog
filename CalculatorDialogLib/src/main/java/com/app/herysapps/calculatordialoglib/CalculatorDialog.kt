@@ -22,11 +22,16 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
     lateinit var tagDialog: String
 
     var mDecor: String? = null
+
     var mNumberColor: Int = R.color.numberColor
-    var mOperationColor: Int = R.color.operatorColor
     var mNumberBackgroundColor: Int = R.color.numberBackgroundColor
+
+    var mOperationColor: Int = R.color.operatorColor
     var mOperatorBackgroundColor: Int = R.color.operatorBackgroundColor
+
+    var okColor: Int = R.color.okColor
     var mOkBackgroundColor: Int = R.color.okBackgroundColor
+
     var mLimitNumbers: Int = 0
     var mLimitNegativeNumbers: Boolean = false
     var mErrorDiv0: String = "Division by 0 impossible"
@@ -65,6 +70,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
         outState.putInt(OPERATION_COLOR, mOperationColor)
         outState.putInt(NUMBER_BACK_COLOR, mNumberBackgroundColor)
         outState.putInt(OPERATION_BACK_COLOR, mOperatorBackgroundColor)
+        outState.putInt(OK_COLOR, okColor)
         outState.putInt(OK_BACK_COLOR, mOkBackgroundColor)
         outState.putInt(LIMIT_NUMBER, mLimitNumbers)
         outState.putBoolean(NEGATIVE_NUMBERS, mLimitNegativeNumbers)
@@ -94,6 +100,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
             mOperationColor = savedInstanceState.getInt(OPERATION_COLOR)
             mNumberBackgroundColor = savedInstanceState.getInt(NUMBER_BACK_COLOR)
             mOperatorBackgroundColor = savedInstanceState.getInt(OPERATION_BACK_COLOR)
+            okColor = savedInstanceState.getInt(OK_COLOR)
             mOkBackgroundColor = savedInstanceState.getInt(OK_BACK_COLOR)
             mLimitNumbers = savedInstanceState.getInt(LIMIT_NUMBER)
             mLimitNegativeNumbers = savedInstanceState.getBoolean(NEGATIVE_NUMBERS)
@@ -207,6 +214,9 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
         (view.findViewById(R.id.imageButtonOk) as ImageView).setColorFilter(operationColor)
 
         view.findViewById<View>(R.id.operators).setBackgroundResource(mOperatorBackgroundColor)
+
+        val okColor = ContextCompat.getColor(context!!, okColor)
+        (view.findViewById(R.id.imageButtonOk) as ImageView).setColorFilter(okColor)
         view.findViewById<View>(R.id.imageButtonOkContainer).setBackgroundResource(mOkBackgroundColor)
     }
 
@@ -382,11 +392,16 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
     companion object {
         private const val NAME = "NAME"
         private const val DECOR = "DECOR"
+
         private const val NUMBER_COLOR = "NUMBER_COLOR"
-        private const val OPERATION_COLOR = "OPERATION_COLOR"
         private const val NUMBER_BACK_COLOR = "NUMBER_BACK_COLOR"
+
+        private const val OPERATION_COLOR = "OPERATION_COLOR"
         private const val OPERATION_BACK_COLOR = "OPERATION_BACK_COLOR"
+
+        private const val OK_COLOR = "OK_COLOR"
         private const val OK_BACK_COLOR = "OK_BACK_COLOR"
+
         private const val LIMIT_NUMBER = "LIMIT_NUMBER"
         private const val NEGATIVE_NUMBERS = "NEGATIVE_NUMBERS"
         private const val ERROR_DIV_0 = "ERROR_DIV_0"
