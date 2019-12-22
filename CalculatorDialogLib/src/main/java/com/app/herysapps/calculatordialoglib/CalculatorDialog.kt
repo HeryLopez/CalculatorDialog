@@ -94,7 +94,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
     private fun initVariablesFromSavedInstanceState(savedInstanceState: Bundle?) {
         // Get information the instance if there is.
         if (savedInstanceState != null) {
-            tagDialog = savedInstanceState.getString(NAME)
+            tagDialog = savedInstanceState.getString(NAME) ?: ""
             mDecor = savedInstanceState.getString(DECOR)
             mNumberColor = savedInstanceState.getInt(NUMBER_COLOR)
             mOperationColor = savedInstanceState.getInt(OPERATION_COLOR)
@@ -104,9 +104,9 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
             mOkBackgroundColor = savedInstanceState.getInt(OK_BACK_COLOR)
             mLimitNumbers = savedInstanceState.getInt(LIMIT_NUMBER)
             mLimitNegativeNumbers = savedInstanceState.getBoolean(NEGATIVE_NUMBERS)
-            mErrorDiv0 = savedInstanceState.getString(ERROR_DIV_0)
-            mErrorLimitNumber = savedInstanceState.getString(ERROR_LIMIT)
-            mErrorNegativeValue = savedInstanceState.getString(ERROR_NEGATIVE_NUMBERS)
+            mErrorDiv0 = savedInstanceState.getString(ERROR_DIV_0) ?: ""
+            mErrorLimitNumber = savedInstanceState.getString(ERROR_LIMIT) ?: ""
+            mErrorNegativeValue = savedInstanceState.getString(ERROR_NEGATIVE_NUMBERS) ?: ""
 
             val value = savedInstanceState.getString(VALUE)
             calculator.setDoubleInList(value)
