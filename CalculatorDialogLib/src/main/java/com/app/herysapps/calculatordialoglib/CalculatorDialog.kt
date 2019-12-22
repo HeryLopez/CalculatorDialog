@@ -278,7 +278,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
     private fun getTotalToShow(): String {
         val result: String
         var total = calculator.total
-        if (validateAndShowError(total)){
+        if (total != "." && validateAndShowError(total)){
             result = ""
         } else {
             val bd = BigDecimal(if (total != "") total else "0")
@@ -311,7 +311,7 @@ class CalculatorDialog : DialogFragment(), View.OnClickListener, View.OnLongClic
     }
 
     private fun isInfinity(total: String): Boolean {
-        if (total == "") return false
+        if (total == "" || total == ".") return false
         return java.lang.Double.parseDouble(total) == java.lang.Double.POSITIVE_INFINITY || java.lang.Double.parseDouble(total) == java.lang.Double.POSITIVE_INFINITY
     }
 

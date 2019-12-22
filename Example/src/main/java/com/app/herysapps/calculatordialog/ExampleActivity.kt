@@ -86,7 +86,7 @@ class ExampleActivity : AppCompatActivity(), OnDialogResultListener {
 
     private fun example3() {
         v3 = 0.0 //3.1415
-        val strWithFormat = dialogA!!.getNumberWithFormat(v1)
+        val strWithFormat = dialogA!!.getNumberWithFormat(v3)
         textView3.text = strWithFormat
         buttonSelector03.setOnClickListener {
             dialogB!!.setInitialValue(v3)
